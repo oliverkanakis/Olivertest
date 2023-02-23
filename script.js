@@ -1,27 +1,17 @@
-const quarterTime = {
-    Q1: 129600,
-    Q2: 131040,
-    Q3: 132480,
-    Q4: 132480
-};
-
-const calcForm = document.getElementById('calc-form');
-const quarterSelect = document.getElementById('quarter-select');
-const downtimeInput = document.getElementById('downtime-input');
-const resultDiv = document.getElementById('result');
-
-calcForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
-    
-    const selectedQuarter = quarterSelect.value;
-    const downtime = parseInt(downtimeInput.value, 10);
-    const totalQuarterTime = quarterTime[selectedQuarter];
-    
-    if (isNaN(downtime)) {
-        resultDiv.innerText = 'Please insert a valid downtime value.';
-        return;
-    }
-    
-    const uptimePercentage = (totalQuarterTime - downtime) / totalQuarterTime * 100;
-    resultDiv.innerText = `Quarter ${selectedQuarter}: ${uptimePercentage.toFixed(2)}% uptime`;
-});
+function calculate() {
+  // Get the selected quarter value
+  var quarterSelect = document.getElementById("quarter");
+  var quarterValue = quarterSelect.options[quarterSelect.selectedIndex].value;
+  
+  // Get the downtime value
+  var downtimeInput = document.getElementById("downtime");
+  var downtimeValue = downtimeInput.value;
+  
+  // Calculate the result
+  var totalTime = parseInt(quarterValue);
+  var result = (totalTime - parseInt(downtimeValue)) / totalTime;
+  
+  // Display the result
+  var resultElement = document.getElementById("result");
+  resultElement.innerHTML = "Result: " + result.toFixed(2);
+}
