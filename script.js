@@ -12,6 +12,6 @@ function calculate() {
   var result = (totalTime - parseInt(downtimeValue)) / totalTime;
   
   // Display the result
-  var resultElement = document.getElementById("result");
+  var resultElement = document.getElementById("output");
   resultElement.innerHTML = "Result: " + result.toFixed(2);
 }
