@@ -1,70 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>ÜBERMEGA SLA CALCULATOR</title>
-    <style>
-      h2 {
-        font-size: 24px;
-        color: #333;
-        text-align: center;
-        margin-top: 50px;
-      }
-      label {
-        font-size: 18px;
-        color: #666;
-        display: block;
-        margin-top: 20px;
-      }
-      select,
-      input[type="number"] {
-        font-size: 16px;
-        color: #333;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-top: 10px;
-        width: 100%;
-        box-sizing: border-box;
-      }
-      button {
-        font-size: 18px;
-        color: #fff;
-        background-color: #3498db;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        margin-top: 20px;
-        cursor: pointer;
-      }
-      #output {
-        font-size: 24px;
-        color: #333;
-        text-align: center;
-        margin-top: 50px;
-      }
-    </style>
-  </head>
-  <body>
-    <h2>ÜBERMEGA SLA CALCULATOR:</h2>
-    <form>
-      <label for="quarter">Select quarter:</label>
-      <select id="quarter" name="quarter">
-        <option value="129600">Q1</option>
-        <option value="131040">Q2</option>
-        <option value="132480">Q3</option>
-        <option value="132480">Q4</option>
-      </select>
-      <br><br>
-      <label for="downtime">Total downtime (in minutes):</label>
-      <input type="number" id="downtime" name="downtime" value="">
-      <br><br>
-      <button type="button" onclick="calculate()">Calculate</button>
-    </form>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h2>ÜBERMEGA SLA CALCULATOR:</h2>
+  <form>
+    <label for="quarter">Select quarter:</label>
+    <select id="quarter" name="quarter">
+      <option value="129600">Q1</option>
+      <option value="131040">Q2</option>
+      <option value="132480">Q3</option>
+      <option value="132480">Q4</option>
+    </select>
+    <br><br>
+    <label for="downtime">Total downtime (in minutes):</label>
+    <input type="number" id="downtime" name="downtime" value="">
+    <br><br>
+    <button type="button" onclick="calculate()">Calculate</button>
+  </form>
 
-    <p id="output"></p>
+  <p id="output"></p>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
-
