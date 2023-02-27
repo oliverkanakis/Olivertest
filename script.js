@@ -14,5 +14,5 @@ function calculate() {
   
   // Display the result
   const resultElement = document.getElementById("output");
-  resultElement.innerHTML = "Total uptime: " + uptimePercentage.toFixed(2) + "%";
+  resultElement.innerHTML = "Total uptime: " + uptimePercentage.toFixed(3) + "%";
 }
