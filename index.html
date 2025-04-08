@@ -1,18 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-	<link rel="icon" type="image/x-icon" href="chaticon.ico">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>OLIVER CHATWIDGET</title>
-	  <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  </head>
-  <body>
-	<script src="index.js"></script>
-	  <div style = "position:relative; left:80px; top:20px;">
-		  <script src="https://customerwidget.telavox.com/tvx-customer-widget-app.js?widgetId=4b36691b-e57a-47d7-bf03-197ce8147b51" charset="utf-8" crossorigin="anonymous" type="text/javascript" defer></script>
-	  <h2>OLIVER CHATWIDGET TEST</h2>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Login Overlay with Chat Widget</title>
+  <!-- Optional: Import Roboto from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --app-font-regular: 'Roboto', Helvetica, Arial, sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .overlay input {
+      width: 420px;
+      height: 25px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: white;
+      font-family: var(--app-font-regular);
+    }
+
+    #username {
+      transform: translate(-1px, -91px);
+    }
+
+    #password {
+      transform: translate(-1px, -88px);
+    }
+
+    .overlay button {
+      width: 145px;
+      height: 45px;
+      font-size: 16px;
+      background-color: rgb(44, 53, 81);
+      color: white;
+      cursor: pointer;
+      border: none;
+      border-radius: 12px;
+      transform: translate(296px, -75px);
+      font-family: var(--app-font-regular);
+    }
+
+    .overlay button:hover {
+      background-color: rgb(30, 36, 55);
+    }
+
+    /* Chat Widget Styling */
+    #chat-widget-container {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <iframe src="https://flow.telavox.com/signin.jsp?app=true"></iframe>
+
+    <div class="overlay">
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="handleLogin()">Login</button>
+    </div>
+  </div>
+
+  <!-- Chat Widget Script -->
+  <div id="chat-widget-container">
+    <script src="https://customerwidget.telavox.com/tvx-customer-widget-app.js?widgetId=4b36691b-e57a-47d7-bf03-197ce8147b51" charset="utf-8" crossorigin="anonymous" type="text/javascript" defer></script>
+  </div>
+
+  <script>
+    function handleLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      alert(`Detta var inte så klokt du.. \nUsername: ${username}\nPassword: ${password}`);
+    }
+  </script>
+</body>
 </html>
